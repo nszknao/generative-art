@@ -1,17 +1,23 @@
-import dynamic from "next/dynamic";
+import { List, ListItem } from "@chakra-ui/react";
 import type { NextPage } from "next";
+import Link from "next/link";
 
-const P5Wrapper = dynamic(() => import("src/P5Wrapper"), { ssr: false });
-import { sketch } from "src/sketches/sketch";
-import { sketch3d } from "src/sketches/sketch3d";
+import { Layout } from "src/components/Layout";
 
 const Home: NextPage = () => {
   return (
-    <div style={{ display: "flex" }}>
-      <P5Wrapper sketch={sketch} />
-      <div style={{ width: 10 }} />
-      <P5Wrapper sketch={sketch3d} />
-    </div>
+    <Layout>
+      <List spacing={3}>
+        <ListItem>
+          <Link href="/structure">
+            <a>Structure</a>
+          </Link>
+        </ListItem>
+        <ListItem>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </ListItem>
+      </List>
+    </Layout>
   );
 };
 
