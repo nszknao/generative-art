@@ -14,7 +14,9 @@ const Home: NextPage = () => {
           </Link>
         </ListItem>
         <ListItem>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          <Link href="/three-dim">
+            <a>3D</a>
+          </Link>
         </ListItem>
       </List>
     </Layout>
