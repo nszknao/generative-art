@@ -9,6 +9,7 @@ const P5Wrapper = dynamic(() => import("src/P5Wrapper"), { ssr: false });
 import { geometries } from "src/sketches/three-dim/geometries";
 import { sineCosine } from "src/sketches/three-dim/sine-cosine";
 import { multipleLights } from "src/sketches/three-dim/multiple-lights";
+import { orbitControl } from "src/sketches/three-dim/orbit-control";
 
 const ThreeDim: NextPage = () => {
   return (
@@ -37,6 +38,7 @@ const ThreeDim: NextPage = () => {
         <P5Wrapper sketch={geometries} />
         <P5Wrapper sketch={sineCosine} />
         <P5Wrapper sketch={multipleLights} />
+        <P5Wrapper sketch={orbitControl} />
       </VStack>
     </Layout>
   );
