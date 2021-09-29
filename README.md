@@ -1,4 +1,4 @@
 ## Generative Art
-p5.jsを使ったクリエティブ
+クリエイティブコーディングを試す。
 
 https://generative-art-sigma.vercel.app/

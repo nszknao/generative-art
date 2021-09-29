@@ -17,6 +17,11 @@ const Home: NextPage = () => {
             <a>p5.js Examples</a>
           </Link>
         </ListItem>
+        <ListItem textDecoration="underline">
+          <Link href="/threejs">
+            <a>Three.js</a>
+          </Link>
+        </ListItem>
       </List>
     </Layout>
   );
