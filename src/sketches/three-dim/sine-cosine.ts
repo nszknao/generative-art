@@ -18,9 +18,7 @@ export const sineCosine = (p: p5) => {
           i * 0.1
         );
         p.rotateZ(p.frameCount * 0.002);
-        p.push();
         p.sphere(8, 6, 4);
-        p.pop();
       }
       p.pop();
     }

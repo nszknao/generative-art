@@ -1,6 +1,8 @@
-import { VStack, Heading } from "@chakra-ui/layout";
+import { Heading, VStack } from "@chakra-ui/layout";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import type { NextPage } from "next";
+import Link from "next/link";
 
 import { Layout } from "src/components/Layout";
 const P5Wrapper = dynamic(() => import("src/P5Wrapper"), { ssr: false });
@@ -14,7 +16,25 @@ import { createGraphics } from "src/sketches/structure/create-graphics";
 const Structure: NextPage = () => {
   return (
     <Layout>
-      <Heading>Structure</Heading>
+      <Breadcrumb fontWeight="medium" fontSize="sm" mb={4}>
+        <BreadcrumbItem>
+          <Link href="/" passHref>
+            <BreadcrumbLink>Home</BreadcrumbLink>
+          </Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <Link href="/p5js-examples" passHref>
+            <BreadcrumbLink>p5.js Examples</BreadcrumbLink>
+          </Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink isCurrentPage>Structure</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+
+      <Heading as="h1" size="lg" mb={4}>
+        Structure
+      </Heading>
 
       <VStack align="start">
         <P5Wrapper sketch={coordinates} />

@@ -1,6 +1,8 @@
 import { VStack, Heading } from "@chakra-ui/layout";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import type { NextPage } from "next";
+import Link from "next/link";
 
 import { Layout } from "src/components/Layout";
 const P5Wrapper = dynamic(() => import("src/P5Wrapper"), { ssr: false });
@@ -11,7 +13,25 @@ import { multipleLights } from "src/sketches/three-dim/multiple-lights";
 const ThreeDim: NextPage = () => {
   return (
     <Layout>
-      <Heading>3D</Heading>
+      <Breadcrumb fontWeight="medium" fontSize="sm" mb={4}>
+        <BreadcrumbItem>
+          <Link href="/" passHref>
+            <BreadcrumbLink>Home</BreadcrumbLink>
+          </Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <Link href="/p5js-examples" passHref>
+            <BreadcrumbLink>p5.js Examples</BreadcrumbLink>
+          </Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink isCurrentPage>3D</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+
+      <Heading as="h1" size="lg" mb={4}>
+        3D
+      </Heading>
 
       <VStack align="start">
         <P5Wrapper sketch={geometries} />
